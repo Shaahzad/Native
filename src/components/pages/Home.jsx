@@ -14,7 +14,7 @@ const Home = () => {
       </Text>
     </View>
       <View>
-      <TextInput placeholder='Search'/>
+      <TextInput placeholder='UserName'/>
       </View>
     </View>
   )
