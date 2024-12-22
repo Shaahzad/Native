@@ -4,7 +4,7 @@ import Home from './src/components/pages/Home'
 
 const App = () => {
   return (
-    <View>
+    <View style={{flex: 1}}> 
       <StatusBar backgroundColor='red'/>
       <Home />
     </View>
