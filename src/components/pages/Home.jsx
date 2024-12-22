@@ -68,6 +68,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     width: 200,
     marginTop: 10
+  },
+  loginbtn:{
+    
   }
 })
 
