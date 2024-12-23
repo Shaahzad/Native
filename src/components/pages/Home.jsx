@@ -1,37 +1,47 @@
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView, Alert } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 const Home = () => {
+
+  const HandleModal = () => {
+    return(
+      Alert.alert('Success', 'Your account has been created successfully')
+    )
+  }
+  const HandleModallogin = () => {
+    return(
+      Alert.alert('Success', 'You have logged in successfully')
+    )
+  }
   return (
     <View style={{flex: 1}}>
       <View style={styles.header}>
         <Text style={styles.headerheading}>Signup</Text>
         <Text style={styles.headerchild}>Create your account</Text>
       </View>
-      <View style={styles.signupform}>
+      <ScrollView style={styles.signupform}>
         <TextInput placeholder='User Name' style={styles.input}/>
-        <TextInput placeholder='Email' style={styles.input}/>
-        <TextInput placeholder='Password' style={styles.input}/>
-        <TextInput placeholder='Confirm Password' style={styles.input}/>
+        <TextInput placeholder='Email' keyboardType='email-address' style={styles.input}/>
+        <TextInput placeholder='Password' secureTextEntry style={styles.input}/>
+        <TextInput placeholder='Confirm Password' secureTextEntry style={styles.input}/>
         <View>
-        <TouchableOpacity style={styles.signupbtncontainer}>
+        <TouchableOpacity style={styles.signupbtncontainer} onPress={HandleModal}>
           <Text style={styles.signupbtn}>Signup</Text>          
         </TouchableOpacity>
         <Text style={styles.or}>or</Text>
-        <TouchableOpacity style={styles.signupbtncontainer}>
+        <TouchableOpacity style={styles.signupbtncontainer} onPress={HandleModallogin}>
           <Text style={styles.loginbtn}>Login</Text>          
         </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   header:{
-    flex: 1,
-    backgroundColor: 'red',
+    flex: 0.3,
     justifyContent: 'center'
   },
   signupform:{
