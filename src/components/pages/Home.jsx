@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
@@ -18,9 +18,9 @@ const Home = () => {
         <TouchableOpacity style={styles.signupbtncontainer}>
           <Text style={styles.signupbtn}>Signup</Text>          
         </TouchableOpacity>
-        <Text style={{textAlign: 'center'}}>or</Text>
+        <Text style={styles.or}>or</Text>
         <TouchableOpacity style={styles.signupbtncontainer}>
-          <Text style={styles.signupbtn}>Login</Text>          
+          <Text style={styles.loginbtn}>Login</Text>          
         </TouchableOpacity>
         </View>
       </View>
@@ -69,8 +69,21 @@ const styles = StyleSheet.create({
     width: 200,
     marginTop: 10
   },
+  or: {
+    textAlign: 'center',
+    marginTop: 10,
+    fontSize: 20
+  },
   loginbtn:{
-    
+    padding: 10,
+    borderRadius: 40,
+    textAlign: 'center',
+    color: 'black',
+    fontSize: 20,
+    marginTop: 10,
+    borderWidth: 1,
+    borderColor: '#EF4F1F',
+    width: '100%'
   }
 })
 
