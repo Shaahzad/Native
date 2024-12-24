@@ -1,7 +1,7 @@
 import { StatusBar, View } from 'react-native'
 import React from 'react'
 import Home from './src/components/pages/Home'
-
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
