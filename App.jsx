@@ -1,19 +1,26 @@
-import { StatusBar, View } from 'react-native'
 import React from 'react'
-import Home from './src/components/pages/Home'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Home from './src/pages/Home';
+import Login from './src/pages/Login';
+import { StatusBar, View } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
 
 const App = () => {
   return (
-    <View style={{flex: 1}}> 
-      <StatusBar backgroundColor='red'/>
+    <View>
+    <StatusBar backgroundColor={'red'}/>
+     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Home" component={Home}  options={{
+        headerShown: false
+      }}/>
+      <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>
-  </View>
+    </NavigationContainer>
+    </View>
   )
 }
 
