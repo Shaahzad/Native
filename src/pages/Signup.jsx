@@ -1,7 +1,7 @@
 import { Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
-const Home = ({navigation}) => {
+const Signup = ({navigation}) => {
 console.log(navigation)
 
   return (
@@ -14,16 +14,16 @@ console.log(navigation)
       </View>
       <View style={styles.forminput}>
         <TextInput placeholder='User Name' style={styles.input}/>
-        <TextInput placeholder='Email' style={styles.input}/>
-        <TextInput placeholder='Password' style={styles.input}/>
-        <TextInput placeholder='Confirm Password' style={styles.input}/>
+        <TextInput placeholder='Email' style={styles.input} keyboardType='email-address'/>
+        <TextInput placeholder='Password' style={styles.input} secureTextEntry/>
+        <TextInput placeholder='Confirm Password' style={styles.input} secureTextEntry/>
         <View style={styles.btncontainer}>
-        <TouchableOpacity style={styles.signupbtn}>
+        <TouchableOpacity style={styles.signupbtn} onPress={()=> alert('Account Created Successfully')} >
             <Text style={styles.btntext}>Sign Up</Text>
         </TouchableOpacity>
         <Text style={styles.or}>Or</Text>
-        <TouchableOpacity  style={styles.loginbtn}>
-            <Text style={styles.btntextlogin}>login with Google</Text>
+        <TouchableOpacity  style={styles.loginbtn} onPress={()=> navigation.navigate('Login')}>
+            <Text style={styles.btntextlogin}>login</Text>
         </TouchableOpacity>
         </View>
       </View>
@@ -31,7 +31,7 @@ console.log(navigation)
   ) 
 }
 
-export default Home
+export default Signup
 
 const styles = StyleSheet.create({
     container:{
